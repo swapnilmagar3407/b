@@ -1,0 +1,31 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+
+public class SumServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try {
+            String num1 = request.getParameter("num1");
+            String num2 = request.getParameter("num2");
+
+            int number1 = Integer.parseInt(num1);
+            int number2 = Integer.parseInt(num2);
+
+            int sum = number1 + number2;
+
+            out.println("<html><body>");
+            out.println("<h2>Result of the Addition</h2>");
+            out.println("<p>Sum of " + number1 + " and " + number2 + " is: " + sum + "</p>");
+            out.println("</body></html>");
+        } catch (Exception e) {
+            out.println("<html><body>");
+            out.println("<h2>Error: Invalid input! Please provide valid numbers.</h2>");
+            out.println("</body></html>");
+        } finally {
+            out.close();
+        }
+    }
+}

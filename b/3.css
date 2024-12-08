@@ -1,0 +1,168 @@
+body, h1, h2, h3, h4, p, a, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #2980b9;
+    font-size: 2em;
+}
+
+h3 {
+    color: #27ae60;
+    font-size: 1.5em;
+}
+
+h4 {
+    color: #e74c3c;
+    font-size: 1.2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.intro {
+    margin: 20px 0;
+}
+
+.intro img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.table-container {
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: skyblue;
+    transition: 3s;
+}
+
+@media (max-width: 768px) {
+    .img {
+        width: 300px;
+        height:300px;
+        float: none;
+        margin: 0;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .intro img {
+        margin: 0;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+        #hiddenDiv {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Tasks</h1>
+
+    <!-- Change Text -->
+    <p id="textParagraph">Original Text</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- Add Item -->
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+
+    <!-- Remove Item -->
+    <button onclick="removeItem()">Remove Last Item</button>
+
+    <!-- Toggle Class -->
+    <div id="toggleDiv">Toggle my background color</div>
+    <button onclick="toggleClass()">Toggle Class</button>
+
+    <!-- Show Alert -->
+    <input type="text" id="alertInput" placeholder="Type something">
+    <button onclick="showAlert()">Show Alert</button>
+
+    <!-- Hide Element -->
+    <div id="hideDiv">I can be hidden</div>
+    <button onclick="hideElement()">Hide Element</button>
+
+    <!-- Show Element -->
+    <div id="hiddenDiv">I was hidden!</div>
+    <button onclick="showElement()">Show Element</button>
+
+    <!-- Change Color -->
+    <div id="colorDiv" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button onclick="changeColor()">Change Color</button>
+
+    <!-- Counter -->
+    <div id="counterDiv">Counter: 0</div>
+    <button onclick="incrementCounter()">Increment Counter</button>
+
+    <!-- Input to Text -->
+    <input type="text" id="dynamicInput" placeholder="Type here">
+    <p id="dynamicText">Dynamic Text: </p>
+
+    <script>
+        function changeText() {
+            document.getElementById('textParagraph').innerText = 'Text has been changed!';
+        }
+
+        function addItem() {
+            var list = document.getElementById('itemList');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'New Item';
+            list.appendChild(newItem);
+        }
+
+        function removeItem() {
+            var list = document.getElementById('itemList');
+            if (list.lastElementChild) {
+                list.removeChild(list.lastElementChild);
+            }
+        }
+
+        function toggleClass() {
+            var div = document.getElementById('toggleDiv');
+            div.classList.toggle('highlight');
+        }
+
+        function showAlert() {
+            var input = document.getElementById('alertInput').value;
+            alert(input);
+        }
+
+        function hideElement() {
+            document.getElementById('hideDiv').style.display = 'none';
+        }
+
+        function showElement() {
+            document.getElementById('hiddenDiv').style.display = 'block';
+        }
+
+        function changeColor() {
+            var div = document.getElementById('colorDiv');
+            div.style.backgroundColor = div.style.backgroundColor === 'lightblue' ? 'pink' : 'lightblue';
+        }
+
+        function incrementCounter() {
+            var counterDiv = document.getElementById('counterDiv');
+            var count = parseInt(counterDiv.innerText.split(': ')[1]);
+            counterDiv.innerText = `Counter: ${count + 1}`;
+        }
+
+        document.getElementById('dynamicInput').addEventListener('input', function () {
+            document.getElementById('dynamicText').innerText = `Dynamic Text: ${this.value}`;
+        });
+    </script>
+</body>
+</html>

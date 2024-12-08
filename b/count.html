@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <section>
+        <form>
+            <label for="first_no">Enter 1st Number: </label><input id="first_no" type="number">
+            <label for="second_no">Enter 2nd Number: </label><input id="second_no" type="number">
+            <label for="operator">Enter Operator (eg. +, -, *, /): </label><input id="operator" type="text">
+            <button type="button" onclick="cal()">Calculate</button>
+            <button type="reset" onclick="document.getElementById('answer').textContent = ''">Reset</button>
+            <p id="answer"></p>
+        </form>
+    </section>
+    <!-- <script src="Counter.js"></script> -->
+    <!-- JS -->
+    <script>
+        cal = () => {
+
+            let ans = document.querySelector("#answer");
+            let first_no = document.querySelector("#first_no").value;
+            let second_no = document.querySelector("#second_no").value;
+            let op = document.querySelector("#operator").value;
+
+            console.log(first_no)
+            console.log(second_no)
+            console.log(op);
+            if (op == '+') {
+                ans.textContent = "Addition is: " + first_no + " + " + second_no + " = " + (parseInt(first_no) + parseInt(second_no));
+                console.log(ans.textContent)
+            }
+            else if (op == '-') {
+                ans.textContent = "Subtraction is: " + first_no + " - " + second_no + " = " + (parseInt(first_no) - parseInt(second_no));
+                console.log(ans.textContent)
+            }
+            else if (op == '*') {
+                ans.textContent = "Multiplication is: " + first_no + " * " + second_no + " = " + (parseInt(first_no) * parseInt(second_no));
+                console.log(ans.textContent)
+            }
+            else if (op == '/') {
+                if (parseInt(second_no) == 0)
+                    ans.textContent = "Cannot Divide By Zero...";
+                else {
+                    ans.textContent = "Division is: " + first_no + " / " + second_no + " = " + (parseInt(first_no) / parseInt(second_no));
+                    console.log(ans.textContent)
+                }
+            }
+            else if (op == "" || first_no == "" || second_no == "") {
+                ans.textContent = "Data is missing, please Enter All Required Data..."
+                console.log(ans.textContent)
+
+            }
+            else {
+                ans.textContent = "Invalid Operator...Try Again"
+                console.log(ans.textContent)
+            }
+        }
+    </script>
+</body>
+</html>

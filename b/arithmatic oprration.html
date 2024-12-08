@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <script>
+        // Function to perform arithmetic operations
+        function performArithmetic() {
+            // Get the values from the input fields
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            // Perform arithmetic operations
+            let sum = num1 + num2;
+            let difference = num1 - num2;
+            let product = num1 * num2;
+            let quotient = num1 / num2;
+            let remainder = num1 % num2;
+
+            // Display the results
+            document.getElementById("result").innerHTML = `
+                <p>Sum: ${sum}</p>
+                <p>Difference: ${difference}</p>
+                <p>Product: ${product}</p>
+                <p>Quotient: ${quotient}</p>
+                <p>Remainder: ${remainder}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Arithmetic Operations</h1>
+
+    <!-- Input fields to enter two numbers -->
+    <label for="num1">Enter first number:</label>
+    <input type="number" id="num1" required><br><br>
+
+    <label for="num2">Enter second number:</label>
+    <input type="number" id="num2" required><br><br>
+
+    <!-- Button to perform arithmetic -->
+    <button onclick="performArithmetic()">Calculate</button>
+
+    <!-- Div to display the results -->
+    <div id="result"></div>
+</body>
+</html>
